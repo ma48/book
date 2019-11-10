@@ -1,0 +1,10 @@
+version: '3'
+services:
+    rust:
+        image: rust:1-alpine
+        volumes:
+          - ./myapp:/usr/src/myapp
+        environment:
+          - USER=`${USER}`
+        working_dir: /usr/src/myapp
+        stdin_open: true
